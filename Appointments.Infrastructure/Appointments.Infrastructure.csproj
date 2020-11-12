@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="5.1.1" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Appointments.Application\Appointments.Application.csproj" />
+    <ProjectReference Include="..\Appointments.Domain\Appointments.Domain.csproj" />
+    <ProjectReference Include="..\Appointments.Utilities\Appointments.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\ExternalData\Equipments\EquipmentData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="InternalProcessing\Events\" />
+    <Folder Include="InternalProcessing\EventHandlers\" />
+  </ItemGroup>
+
+</Project>
